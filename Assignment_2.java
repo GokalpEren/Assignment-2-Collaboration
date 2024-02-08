@@ -2,6 +2,30 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Assignment_2 {
+    public static int findMin(int[] arr){
+
+        int min = 101;
+
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] < min ){
+                min = arr[i];
+            }
+        }
+        return min ;
+    }
+
+    public static int findMax(int[] arr){
+
+        int max = -1;
+
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] > max ){
+                max = arr[i];
+            }
+        }
+        return max ;
+    }
+
     
     public static void main(String[] args) {
         
@@ -10,18 +34,20 @@ public class Assignment_2 {
         boolean valid = false;
         int userInput = 0;
 
-        System.out.println ("Please enter a positive integer for the size of the array:");
+        System.out.println ("Please enter a positive integer for the size of the array: ");
 
         //Checking for valid inputs for the size of the array
         do { 
             if (!in.hasNextInt ()) {
                 System.out.println ("Invalid input, please enter a positive integer.");
-            } else {
+            } 
+            else {
                 userInput = in.nextInt ();
 
                 if (userInput <= 0) {
                     System.out.println ("Invalid input, please enter a positive integer.");
-                } else {
+                } 
+                else {
                     valid = true;
                 }
             }
