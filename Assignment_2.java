@@ -46,8 +46,50 @@ public class Assignment_2 {
         }
         return max ;
     }
+    public static void displayMenu(int[] arr) {
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0;
+        while (choice != 5) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Find minimum");
+            System.out.println("2. Find maximum");
+            System.out.println("3. Find average and differences from average");
+            System.out.println("4. Sum of elements with odd- and even-numbered indexes");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
 
-    
+            if (choice == 1) 
+            {
+                System.out.println("Minimum: " + findMin(arr));
+            } 
+            else if (choice == 2) 
+            {
+                System.out.println("Maximum: " + findMax(arr));
+            } 
+            else if (choice == 3) 
+            {
+                double average = findAverage(arr);
+                System.out.println("Average: " + average);
+                double[] differences = diffFromAverage(arr);
+            } 
+            else if (choice == 4) 
+            {
+                System.out.println("Sum of elements with odd indexes: " + sumOddIndexes(arr));
+                System.out.println("Sum of elements with even indexes: " + sumEvenIndexes(arr));
+            } 
+            else if (choice == 5) 
+            {
+                System.out.println("Exiting the program.");
+            } 
+            else 
+            {
+                System.out.println("Invalid choice! Please enter a valid option.");
+            }
+        }
+        scanner.close();
+    }
+
     public static void main(String[] args) {
         
         Scanner in = new Scanner (System.in);
@@ -55,7 +97,7 @@ public class Assignment_2 {
         boolean valid = false;
         int userInput = 0;
 
-        System.out.println ("Please enter a positive integer for the size of the array: ");
+        System.out.print("Please enter a positive integer for the size of the array: ");
 
         //Checking for valid inputs for the size of the array
         do { 
@@ -86,9 +128,8 @@ public class Assignment_2 {
         for (int i = 0; i < randomizedArray.length; i++) {
             System.out.print (randomizedArray[i] + " ");
         }
-
         System.out.println ();
+        displayMenu(randomizedArray);
 
     }
-
 }
