@@ -2,6 +2,27 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Assignment_2 {
+    public static int findSum (int[] arr){
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    public static double findAverage (int[] arr){
+        return (double)findSum(arr) / arr.length;
+    }
+
+    public static double[] diffFromAverage (int[] arr){
+        double[] diffArray = new double[arr.length];
+        double average = findAverage(arr);
+        for (int i = 0; i < arr.length; i++) {
+            diffArray[i] = arr[i] - average;
+        }
+        return diffArray;
+    }
+
     public static int findMin(int[] arr){
 
         int min = 101;
